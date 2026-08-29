@@ -2,8 +2,8 @@ import os
 import time
 from celery import Celery
 
-# 1. Connect to Redis (Fallback to local Redis if env variable isn't set)
-REDIS_URL = os.getenv("REDIS_URL", "redis://localhost:6379/0")
+# 1. Connect to Redis (Checks Render's CELERY_BROKER_URL first, falls back to local Redis)
+REDIS_URL = os.getenv("CELERY_BROKER_URL", os.getenv("REDIS_URL", "redis://localhost:6379/0"))
 
 # 2. Initialize Celery App
 celery_app = Celery(
