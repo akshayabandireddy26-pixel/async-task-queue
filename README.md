@@ -10,3 +10,6 @@ A robust backend service built with **FastAPI**, **Celery**, and **Redis** desig
 ## API Endpoints
 * `POST /statements/generate` - Triggers a background job and returns a task ID instantly (Status code: `202 Accepted`).
 * `GET /tasks/{task_id}` - Checks the live processing status (`PENDING`, `SUCCESS`, or `FAILURE`) of a given task ID.
+
+## Live Demo & Testing
+https://async-task-queue-3.onrender.com/docs
